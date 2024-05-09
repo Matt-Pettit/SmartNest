@@ -1,0 +1,2 @@
+mac,name
+50:DA:D6:DD:E5:A6,Redmi Note 10 Pro

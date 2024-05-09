@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <!-- Customized -->
+    <title>SmartNest</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/styles.min.css') }}">
+    <!-- Customized -->
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-md sticky-top py-3" id="mainNav" style="background: rgb(33,32,42);">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="/"><span class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center me-2 bs-icon" style="padding-bottom: 0px;background: rgb(255,255,255);"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-camera" style="border-color: rgb(0,0,0);color: rgb(0,0,0);">
+                        <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z"></path>
+                        <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"></path>
+                    </svg></span><span>SmartNest</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse d-xxl-flex justify-content-end align-items-end align-content-end justify-content-xxl-end align-items-xxl-center" id="navcol-1">
+                <ul class="navbar-nav ms-auto">
+                    <!-- Customized -->
+                    <li class="nav-item"><a class="nav-link" href="/">Camera Preview</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/datapreview">Data Preview</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/dataretrieval">Data Download</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/settings">Settings</a></li>
+                    <!-- Customized -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container py-4 py-xl-5">
+        <div class="row mb-5">
+            <div class="col-md-8 col-xl-6 text-center mx-auto">
+                <h2 style="color: rgb(255,255,255);font-weight: bold;">Camera Preview</h2>
+                <p class="w-lg-50"></p>
+            </div>
+        </div>
+        <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 d-flex justify-content-center align-items-start" style="text-align: left;">
+            <div class="col d-flex d-xxl-flex justify-content-center align-items-center align-items-xxl-center">
+                <div class="card justify-content-center" style="background: rgb(255,255,255);width: 328px;">
+                    <div class="card-body p-4" style="width: 328px;">
+                        <!-- Customized -->
+                        <h1 style="border-color: rgb(255,255,255);color: rgb(0,0,0);font-size: 22.4px;text-align: center;"><strong>Inside Camera</strong></h1><img src="/image/camera_preview_outside.png" style="width: 279px;text-align: center;">
+                        <!-- Customized -->
+                        <p class="d-flex justify-content-center align-items-center" style="color: rgb(0,0,0);padding-top: 18px;">Temperature: 28 C<br>&nbsp; &nbsp; &nbsp;Humidity: 11 %</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex d-xxl-flex justify-content-center align-items-center align-items-xxl-start">
+                <div class="card justify-content-center" style="background: rgb(255,255,255);width: 328px;">
+                    <div class="card-body justify-content-center p-4" style="width: 328px;">
+                        <!-- Customized -->
+                        <h1 style="border-color: rgb(255,255,255);color: rgb(0,0,0);font-size: 22.4px;text-align: center;"><strong>Outside Camera</strong></h1><img src="/image/camera_preview_inside.png" style="width: 279px;text-align: center;">
+                        <!-- Customized -->
+                        <p class="d-flex justify-content-center align-items-center" style="color: rgb(0,0,0);padding-top: 18px;">Temperature: 35 C<br>&nbsp; &nbsp; Humidity: 13 %</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-dark">
+        <div class="container py-4 py-lg-5">
+            <div class="row justify-content-center">
+                <div class="col-7 col-lg-3 col-xxl-4 text-center text-lg-start d-flex flex-column align-items-center order-first align-items-lg-start order-lg-last">
+                    <div class="fw-bold d-flex align-items-center mb-2"><span class="bs-icon-sm bs-icon-circle bs-icon-primary d-flex justify-content-center align-items-center bs-icon me-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-camera">
+                                <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z"></path>
+                                <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"></path>
+                            </svg></span><span>SmartNest</span></div>
+                    <p class="text-muted">The Smartest Way to Monitor Your Birds</p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-muted d-flex justify-content-between align-items-center pt-3">
+                <p class="mb-0">Copyright © 2024 SmartNest</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Customized -->
+    <script src="{{ url_for('static', filename='assets/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/bootstrap/js/assets/js/script.min.js') }}"></script>
+    <!-- Customized -->
+</body>
+
+</html>
