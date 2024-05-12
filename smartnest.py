@@ -101,22 +101,34 @@ def settings():
 
 
 @app.route('/image/<image_name>')
-def serve_image(image_name):
+def serve_preview_image(image_name):
     if image_name == "camera_preview_inside.png":
         # Fetch latest image here
-        image_path = "../Previews/inside.png"
+        image_path = "../Setup/inside_cam.jpg"
     elif image_name == "camera_preview_outside.png":
         # Fetch latest image here
-        image_path = "../Previews/outside.jpg"
+        image_path = "../Setup/outside_cam.jpg"
     else: 
-        image_path = os.path.join('../System_Pics/', image_name+".jpg")
+        image_path = os.path.join('../',image_name)
+
+    print(image_path)
+    return send_file(image_path, mimetype='image/jpg')
+
+
+
+@app.route('/image/<folder>/<filename>')
+def serve_image(folder,filename):
+
+    image_path = os.path.join('../',folder,filename)
+
+    print(image_path)
     return send_file(image_path, mimetype='image/jpg')
 
 
 @app.route('/video/<video_name>')
 def serve_video(video_name):
 
-    video_path = os.path.join('../Videos/split/', video_name)
+    video_path = os.path.join('../', video_name)
     response = make_response(send_file(video_path, mimetype='video/mp4'))
     response.headers['Content-Disposition'] = 'inline'
     return response
@@ -153,10 +165,10 @@ def gen_data():
     files_to_add = []
     for item in rows:
         if videos:
-            video_path = os.path.join('../Videos/split/', item[4]+".mp4")
+            video_path = os.path.join('../', item[4])
             files_to_add.append(video_path)
         if pictures:
-            image_path = os.path.join('../System_Pics/', item[4]+".jpg")
+            image_path = os.path.join('../', item[4])
             files_to_add.append(image_path)
 
     with open(filename, "w", newline="") as file:
@@ -187,9 +199,12 @@ def gen_data():
 
     with zipfile.ZipFile(zipfilename, 'w', zipfile.ZIP_DEFLATED) as zipMe:
         for file in files_to_add:
-            with open(file, 'rb') as f_in:
-                zip_info = zipfile.ZipInfo(os.path.basename(file))
-                zipMe.writestr(zip_info, f_in.read())
+            try:
+                with open(file, 'rb') as f_in:
+                    zip_info = zipfile.ZipInfo(os.path.basename(file))
+                    zipMe.writestr(zip_info, f_in.read())
+            except:
+                print("File doesnt exist, skipping")
     # Return a response to indicate success
     print("Here")
     return jsonify({'status': 'success','zipfile':zipfilename})

@@ -1,0 +1,10 @@
+Date,Location,Temperature,Humidity,Filename
+2024/05/11 20:22,outside,18,60,Outside_Cam/usb_cam_image_5_2024-05-11_20-22-18.jpg
+2024/05/11 20:25,inside,17,58,Inside_Cam/noir_image_5_2024-05-11_20-25-50.jpg
+2024/05/11 20:26,inside,17,58,Inside_Cam/noir_image_6_2024-05-11_20-26-07.jpg
+2024/05/11 20:26,outside,17,58,Outside_Cam/usb_cam_image_6_2024-05-11_20-26-14.jpg
+2024/05/11 20:50,outside,17,60,Outside_Cam/usb_cam_image_7_2024-05-11_20-50-48.jpg
+2024/05/11 20:50,inside,17,58,Inside_Cam/noir_image_7_2024-05-11_20-50-55.jpg
+2024/05/11 20:51,outside,17,58,Outside_Cam/usb_cam_image_8_2024-05-11_20-51-03.jpg
+2024/05/11 20:51,inside,17,59,Inside_Cam/noir_image_8_2024-05-11_20-51-46.jpg
+2024/05/11 20:59,outside,17,60,Outside_Cam/usb_cam_image_9_2024-05-11_20-59-57.jpg

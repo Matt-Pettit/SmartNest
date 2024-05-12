@@ -21,6 +21,7 @@ def add_new_result():
     conn.commit()
     print("New result added successfully.")
 
+
 # Function to show results from a certain date range
 def show_results_date_range():
     start_date = input("Enter start date (YYYY/MM/DD): ")
