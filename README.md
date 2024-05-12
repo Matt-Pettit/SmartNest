@@ -9,10 +9,10 @@ SmartNest is an innovative nest monitoring system designed to assist researchers
 - Robust and Weatherproof Design ☔: The system is designed to withstand harsh environmental conditions, ensuring reliable operation in the field.
 
 # Contributors 🤝
-- Zinzile Mabizela
-- Rasheeda Taliep
-- Letšolo Leoma
-- Matt Pettit
+- Zinzile Mabizela (Enclosure Subsystem)
+- Rasheeda Taliep (Sensing Subsystem)
+- Letšolo Leoma (Power Subsystem)
+- Matt Pettit (Frontend Subsystem)
 # License 📄
 This project is licensed under the MIT License.
 
